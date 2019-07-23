@@ -1,9 +1,6 @@
 backend:
-  name: git-gateway
-  accept_roles: #optional - accepts all users if left out
-    - admin
-    - editor
-    - author
+  name: github
+  repo: rising-winds/therisingwinds.com
 
 media_folder: static/assets
 public_folder: assets
