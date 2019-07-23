@@ -1,6 +1,5 @@
 ---
-path: test
-date: 2019-07-23T03:21:39.074Z
-title: te
+path: /blog/my-first-blog
+date: 2018-01-11T00:00:00-05:00
+title: My First Blog
 ---
-test
