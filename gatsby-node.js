@@ -1,4 +1,5 @@
 const path = require('path');
+const moment = require('moment');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -7,7 +8,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(
+      blogPosts: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -30,11 +31,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.blogPosts.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: `/blog/${moment(node.frontmatter.date).format('YYYY/MM/DD')}/${node.frontmatter.title.replace(/\s/g, "-").toLowerCase()}`,
         component: blogPostTemplate,
-        context: {},
+        context: {
+          id: node.id
+        },
       });
     });
   });
