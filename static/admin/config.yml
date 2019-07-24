@@ -16,3 +16,15 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+
+  - name: chapters
+    label: Chapters
+    folder: chapters
+    create: true
+    fields: 
+      - {name: chapterName, label: Chapter Name}
+      - label: Chapter Rank
+        name: chapterRank
+        widget: "select"
+        options: ["Shire", "Barony", "Duchy", "Grand Duchy", "Principality"]
+        default: "Shire"
