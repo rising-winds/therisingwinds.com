@@ -22,7 +22,7 @@ collections:
     folder: chapters
     create: true
     fields: 
-      - {name: chapterName, label: Chapter Name}
+      - {name: title, label: Chapter Name}
       - label: Chapter Rank
         name: chapterRank
         widget: "select"
