@@ -19,7 +19,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             id
             frontmatter {
               date
-              path
               title
             }
           }
