@@ -10,8 +10,10 @@ collections:
     label: Blog
     folder: blog
     create: true
+    slug: "{{slug}}"
+    preview_path: "blog/{{year}}/{{month}}/{{slug}}"
     fields:
-      - { name: path, label: Path }
+      # - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }

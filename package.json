@@ -22,6 +22,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "moment": "^2.24.0",
     "prettier": "^1.18.2"
   },
   "repository": {
