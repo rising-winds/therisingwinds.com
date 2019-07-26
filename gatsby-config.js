@@ -5,7 +5,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/blog`,
-        name: 'markdown-pages',
+        name: 'blog',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/chapters`,
+        name: 'chapters',
       },
     },
     `gatsby-transformer-remark`,

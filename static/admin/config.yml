@@ -37,6 +37,14 @@ collections:
         collection: chapters
         searchFields: [title]
         valueField: title
+        required: false
+
+      - label: Heraldry 
+        name: heraldry
+        widget: ima
+        media_library:
+          config:
+            multiple: false
 
       - label: Body
         name: body
@@ -89,16 +97,13 @@ collections:
         fields: 
           - label: Persona Name
             name: personaName
-            required: true
 
           - label: Mundane Name
             name: mundaneName
-            required: true
 
           - label: Avatar 
             name: avatar
             widget: image
-            required: true
             media_library:
               config:
                 multiple: false
