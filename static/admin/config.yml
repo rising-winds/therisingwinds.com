@@ -22,9 +22,84 @@ collections:
     folder: chapters
     create: true
     fields: 
-      - {name: title, label: Chapter Name}
+      - name: title
+        label: Chapter Name
+
       - label: Chapter Rank
         name: chapterRank
         widget: "select"
         options: ["Shire", "Barony", "Duchy", "Grand Duchy", "Principality"]
         default: "Shire"
+
+      - label: Parent Chapter
+        name: parent
+        widget: relation
+        collection: chapters
+        searchFields: [title]
+        valueField: title
+
+      - label: Body
+        name: body
+        widget: markdown
+
+      - label: "Meetings"
+        name: meetings
+        widget: list
+        fields: 
+
+          - label: Meeting Type
+            name: type
+            widget: select
+            options: ["primary", "fighterPractice", "craftNight", "other"]
+
+          - label: Frequency
+            name: frequency
+            widget: select
+            options: ["weekly", "biweekly", "monthly"]
+
+          - label: Location Name
+            name: locationName
+
+          - label: Address
+            name: address
+            widget: text
+
+          - label: Location
+            name: location
+            widget: map
+
+      - label: "Social Media Links"
+        name: socialMedia
+        widget: list
+        fields: 
+          - label: Site
+            name: type
+            widget: select
+            options: ["Facebook", "Twitter", "Instagram", "Discord", "Other"]
+
+          - label: Displayed Text
+            name: displayText
+
+          - label: URL
+            name: url
+      
+      - label: "Officers"
+        name: officers
+        widget: list
+        fields: 
+          - label: Persona Name
+            name: personaName
+            required: true
+
+          - label: Mundane Name
+            name: mundaneName
+            required: true
+
+          - label: Avatar 
+            name: avatar
+            widget: image
+            required: true
+            media_library:
+              config:
+                multiple: false
+      
