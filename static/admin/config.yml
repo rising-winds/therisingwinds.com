@@ -6,6 +6,7 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+
   - name: blog
     label: Blog
     folder: blog
@@ -30,6 +31,9 @@ collections:
         widget: "select"
         options: ["Shire", "Barony", "Duchy", "Grand Duchy", "Principality"]
         default: "Shire"
+      
+      - name: Ork Url
+        label: orkUrl
 
       - label: Parent Chapter
         name: parent
@@ -41,10 +45,13 @@ collections:
 
       - label: Heraldry 
         name: heraldry
-        widget: ima
+        widget: image
         media_library:
           config:
             multiple: false
+     
+      - name: Ork Url
+        label: orkUrl
 
       - label: Body
         name: body
@@ -95,11 +102,15 @@ collections:
         name: officers
         widget: list
         fields: 
+
           - label: Persona Name
             name: personaName
 
           - label: Mundane Name
             name: mundaneName
+
+          - label: Office Title
+            name: office
 
           - label: Avatar 
             name: avatar
@@ -107,4 +118,89 @@ collections:
             media_library:
               config:
                 multiple: false
+
+  - name: events
+    label: Events
+    folder: events
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: startTime, label: "Start Time", widget: datetime}
+      - { name: endTime, label: "End Time", widget: datetime}
       
+      - label: Event Banner 
+        name: banner
+        widget: image
+        media_library:
+          config:
+            multiple: false
+
+      - name: links
+        label: Important Links
+        required: false
+        widget: list
+        fields: 
+          - name: label
+            label: Label
+          - name: url
+            label: Url
+
+      - name: location
+        label: Location
+        widget: object
+        fields: 
+          - name: name
+            label: Name
+          - name: streetAddress
+            label: Street Address
+          - name: state
+            label: State
+          - name: zip
+            label: Zip Code
+      - name: gatePricing
+        label: Gate Price 
+        widget: list
+        required: false
+        fields:
+          - name: label
+            label: Label
+          - name: price
+            label: Price
+            widget: number
+
+      - name: staff
+        label: Staff
+        widget: list
+        required: false
+        fields:
+          - name: personaName
+            label: Persona Name
+          - name: mundaneName
+            label: Mundane Name
+          - name: role
+            label: role
+          - label: Avatar 
+            name: avatar
+            widget: image
+            media_library:
+              config:
+                multiple: false
+                
+      - name: schedule
+        label: Schedule
+        widget: list
+        fields:
+          - name: label
+            label: Label
+          - name: startTime
+            label: Start Time
+            widget: datetime
+          - name: price
+            label: Price
+            widget: number
+            required: false
+          - name: description
+            label: Description
+            widget: markdown
+
+
