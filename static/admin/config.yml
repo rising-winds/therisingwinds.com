@@ -134,6 +134,31 @@ collections:
         media_library:
           config:
             multiple: false
+      - label: Host
+        name: host
+        widget: list
+        required: false
+        multiple: false
+        types: 
+          - label: Kingdom
+            name: kingdom
+            type: object
+            fields:
+              - label: Type
+                name: type
+                widget: hidden
+          - label: Chapter
+            name: chapter
+            type: object
+            fields:
+              - label: Host Chapter
+                name: hostChapter
+                widget: relation
+                collection: chapters
+                searchFields: [title]
+                valueField: title
+                required: false
+                multiple: true
 
       - name: links
         label: Important Links
@@ -185,7 +210,7 @@ collections:
             media_library:
               config:
                 multiple: false
-                
+
       - name: schedule
         label: Schedule
         widget: list
