@@ -9,7 +9,7 @@ collections:
 
   - name: blog
     label: Blog
-    folder: blog
+    folder: data/blog
     create: true
     slug: "{{slug}}"
     preview_path: "blog/{{year}}/{{month}}/{{slug}}"
@@ -20,7 +20,7 @@ collections:
 
   - name: chapters
     label: Chapters
-    folder: chapters
+    folder: data/chapters
     create: true
     fields: 
       - name: title
@@ -121,7 +121,7 @@ collections:
 
   - name: events
     label: Events
-    folder: events
+    folder: data/events
     create: true
     fields:
       - { name: title, label: Title }

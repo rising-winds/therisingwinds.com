@@ -5,14 +5,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "npx --node-arg '-r esm' gatsby build",
+    "develop": "npx --node-arg '-r esm' gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "npx --node-arg '-r esm' npm run develop",
+    "serve": "npx --node-arg '-r esm' gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "esm": "^3.2.25",
     "gatsby": "^2.13.31",
     "gatsby-plugin-netlify-cms": "^4.1.6",
     "gatsby-source-filesystem": "^2.1.6",
@@ -23,7 +24,8 @@
   },
   "devDependencies": {
     "moment": "^2.24.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "storybook": "^1.0.0"
   },
   "repository": {
     "type": "git",

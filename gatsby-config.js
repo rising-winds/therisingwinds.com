@@ -4,14 +4,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/data/blog`,
         name: 'blog',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/chapters`,
+        path: `${__dirname}/data/chapters`,
         name: 'chapters',
       },
     },
