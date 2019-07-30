@@ -16,6 +16,10 @@ meetingPoints:
         type: note
       - note: Note 2
         type: note
+      - motion: Motion to Blah!
+        motionedBy: Tyler Ward
+        secondedBy: Jerrod Strait
+        type: boardMotion
     title: Test
     type: agendaItem
 ---
