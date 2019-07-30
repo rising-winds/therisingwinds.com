@@ -228,4 +228,205 @@ collections:
             label: Description
             widget: markdown
 
+  - name: minutes
+    label: minutes
+    folder: data/minutes
+    identifier_field: startTime
+    slug: "{{fields.meetingType}}-{{fields.startTime}}"
+    fields: 
+
+      - name: startTime
+        label: Meeting Start
+        widget: datetime
+
+      - name: endTime
+        label: Meeting End
+        widget: datetime
+
+      - label: Type
+        name: meetingType
+        widget: select
+        options: ["Althing", "Board Meeting"]
+
+      - name: meetingPoints
+        label: Meeting Points
+        widget: list
+        types: 
+          - name: attendance
+            label: Board Attendance (if Board Meeting)
+            type: object
+            fields:
+              - name: attending
+                label: Attending
+                widget: list
+                fields:
+                  - name: mundaneName
+                    label: Mundane Name
+
+                  - label: Office
+                    name: boardOffice
+                    widget: select
+                    options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+                    default: "Board Member"
+              
+              - name: absent
+                label: Absent
+                widget: list
+                fields:
+                  - name: mundaneName
+                    label: Mundane Name
+
+                  - label: Office
+                    name: boardOffice
+                    widget: select
+                    options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+                    default: "Board Member"
+
+          - name: agendaItem
+            label: Agenda Item
+            type: object
+            fields:
+              - name: title
+                label: Title
+              
+              - name: itemType
+                label: Item Type
+                widget: select
+                options: ["Scheduled", 'New Business']
+
+              - name: points
+                label: Agenda Points
+                widget: list
+                types:
+
+                  - name: note
+                    label: Note
+                    widget: object
+                    fields:
+                      - label: Note
+                        name: note
+
+                  - name: boardMotion
+                    label: Board Motion/Vote
+                    widget: object
+                    fields:
+
+                      - name: motion
+                        label: Motion
+
+                      - name: motionedBy
+                        label: Motion By (Mundane Name)
+                        
+                      - name: secondedBy
+                        label: Seconded By (Mundane Name)
+                        required: false
+
+                      - name: didVotePass
+                        label: Did Vote Pass
+                        widget: boolean
+
+                      - name: yayVotes
+                        label: Yay votes
+                        widget: list
+                        field:
+                          - name: mundaneName
+                            lable: Mundane Name
+
+                      - name: nayVotes
+                        label: Nay votes
+                        widget: list
+                        field:
+                          - name: mundaneName
+                            lable: Mundane Name
+                      
+                      - name: abstainVotes
+                        label: Abstain Votes
+                        widget: list
+                        field:
+                          - name: mundaneName
+                            lable: Mundane Name
+
+                  - name: althingMotion
+                    label: Althing Motion/Vote
+                    widget: object
+                    fields:
+
+                      - name: motion
+                        label: Motion
+
+                      - name: motionedBy
+                        label: Motion By (Mundane Name)
+                        
+                      - name: secondedBy
+                        label: Seconded By (Mundane Name)
+                        required: false
+
+                      - name: didVotePass
+                        label: Did Vote Pass
+                        widget: boolean
+
+                      - name: yayVotes
+                        label: Yay votes
+                        widget: number
+
+                      - name: nayVotes
+                        label: Nay votes
+                        widget: number
+                      
+                      - name: abstainVotes
+                        label: Abstain Votes
+                        widget: number
+
+
+
+  - name: boardMembers
+    label: Board Members
+    folder: data/board-members
+    fields:
+      
+      - name: mundaneName
+        label: Mundane Name
+
+      - label: Office
+        name: boardOffice
+        widget: select
+        options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+        default: "Board Member"
+
+      - name: bio
+        label: Bio
+        widget: text
+
+      - label: Avatar 
+        name: avatar
+        widget: image
+        media_library:
+          config:
+            multiple: false
+
+  - name: kingdomOfficers
+    label: Kingdom Officers
+    folder: data/officers
+    fields:
+
+      - label: Persona Name
+        name: personaName
+
+      - label: Mundane Name
+        name: mundaneName
+
+      - label: Office Title
+        name: office
+
+      - name: bio
+        label: Bio
+        widget: text
+
+      - label: Avatar 
+        name: avatar
+        widget: image
+        media_library:
+          config:
+            multiple: false
+
 
