@@ -314,6 +314,7 @@ collections:
 
                       - name: motion
                         label: Motion
+                        widget: markdown
 
                       - name: motionedBy
                         label: Motion By (Mundane Name)
@@ -354,6 +355,7 @@ collections:
 
                       - name: motion
                         label: Motion
+                        widtet: markdown
 
                       - name: motionedBy
                         label: Motion By (Mundane Name)
