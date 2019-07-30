@@ -232,7 +232,8 @@ collections:
     label: Meeting Minutes
     folder: data/minutes
     identifier_field: startTime
-    slug: "{{fields.meetingType}}-{{fields.startTime}}"
+    preview_path_date_field: startTime
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.meetingType}}"
     create: true
     fields: 
 
@@ -267,7 +268,7 @@ collections:
                   - label: Office
                     name: boardOffice
                     widget: select
-                    options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+                    options: ["Board Member", "Case Analyst", "Chairperson", "Kingdom Monarch", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
                     default: "Board Member"
               
               - name: absent
@@ -280,7 +281,7 @@ collections:
                   - label: Office
                     name: boardOffice
                     widget: select
-                    options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+                    options: ["Board Member", "Case Analyst", "Chairperson", "Kingdom Monarch", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
                     default: "Board Member"
 
           - name: agendaItem
@@ -396,7 +397,7 @@ collections:
       - label: Office
         name: boardOffice
         widget: select
-        options: ["Board Member", "Case Analyst", "Chairperson", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
+        options: ["Board Member", "Case Analyst", "Chairperson", "Kingdom Monarch", "Secretary", "Vice Chairperson", "Vice Secretary of Finance"]
         default: "Board Member"
 
       - name: bio
