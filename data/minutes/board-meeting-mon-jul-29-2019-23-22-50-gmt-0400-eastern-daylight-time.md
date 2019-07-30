@@ -16,10 +16,12 @@ meetingPoints:
         type: note
       - note: Note 2
         type: note
-      - motion: Motion to Blah!
+      - didVotePass: true
+        motion: Motion to Blah!
         motionedBy: Tyler Ward
         secondedBy: Jerrod Strait
         type: boardMotion
+        yayVotes: []
     title: Test
     type: agendaItem
 ---
