@@ -10,5 +10,8 @@ meetingPoints:
       - boardOffice: Board Member
         mundaneName: Tyler WArd
     type: attendance
+  - itemType: Scheduled
+    title: Test
+    type: agendaItem
 ---
 
