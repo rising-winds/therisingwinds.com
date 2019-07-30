@@ -233,7 +233,7 @@ collections:
     folder: data/minutes
     identifier_field: startTime
     preview_path_date_field: startTime
-    slug: "{{year}}-{{month}}-{{day}}-{{fields.meetingType}}"
+    slug: "{{fields.startTime.year}}-{{fields.startTime.month}}-{{fields.startTime.day}}-{{fields.meetingType}}"
     create: true
     fields: 
 
