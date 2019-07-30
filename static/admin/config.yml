@@ -233,6 +233,7 @@ collections:
     folder: data/minutes
     identifier_field: startTime
     slug: "{{fields.meetingType}}-{{fields.startTime}}"
+    create: true
     fields: 
 
       - name: startTime
@@ -382,6 +383,7 @@ collections:
   - name: boardMembers
     label: Board Members
     folder: data/board-members
+    create: true
     fields:
       
       - name: mundaneName
@@ -407,6 +409,7 @@ collections:
   - name: kingdomOfficers
     label: Kingdom Officers
     folder: data/officers
+    create: true
     fields:
 
       - label: Persona Name
