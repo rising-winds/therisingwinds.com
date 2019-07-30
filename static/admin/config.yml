@@ -229,7 +229,7 @@ collections:
             widget: markdown
 
   - name: minutes
-    label: minutes
+    label: Meeting Minutes
     folder: data/minutes
     identifier_field: startTime
     slug: "{{fields.meetingType}}-{{fields.startTime}}"
@@ -314,7 +314,7 @@ collections:
 
                       - name: motion
                         label: Motion
-                        widget: markdown
+                        widget: text
 
                       - name: motionedBy
                         label: Motion By (Mundane Name)
@@ -326,27 +326,28 @@ collections:
                       - name: didVotePass
                         label: Did Vote Pass
                         widget: boolean
+                        required: false
 
                       - name: yayVotes
                         label: Yay votes
                         widget: list
                         field:
                           - name: mundaneName
-                            lable: Mundane Name
+                            label: Mundane Name
 
                       - name: nayVotes
                         label: Nay votes
                         widget: list
                         field:
                           - name: mundaneName
-                            lable: Mundane Name
+                            label: Mundane Name
                       
                       - name: abstainVotes
                         label: Abstain Votes
                         widget: list
                         field:
                           - name: mundaneName
-                            lable: Mundane Name
+                            label: Mundane Name
 
                   - name: althingMotion
                     label: Althing Motion/Vote
@@ -355,7 +356,7 @@ collections:
 
                       - name: motion
                         label: Motion
-                        widtet: markdown
+                        widtet: text
 
                       - name: motionedBy
                         label: Motion By (Mundane Name)
@@ -367,17 +368,18 @@ collections:
                       - name: didVotePass
                         label: Did Vote Pass
                         widget: boolean
+                        required: false
 
                       - name: yayVotes
-                        label: Yay votes
+                        label: Yay Votes (Number)
                         widget: number
 
                       - name: nayVotes
-                        label: Nay votes
+                        label: Nay Votes (Number)
                         widget: number
                       
                       - name: abstainVotes
-                        label: Abstain Votes
+                        label: Abstain Votes (Number)
                         widget: number
 
 
