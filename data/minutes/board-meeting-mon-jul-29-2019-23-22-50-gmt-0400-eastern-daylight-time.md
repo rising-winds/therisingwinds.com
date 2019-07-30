@@ -11,6 +11,11 @@ meetingPoints:
         mundaneName: Tyler WArd
     type: attendance
   - itemType: Scheduled
+    points:
+      - note: Note 1
+        type: note
+      - note: Note 2
+        type: note
     title: Test
     type: agendaItem
 ---
